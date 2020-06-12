@@ -1,0 +1,34 @@
+<div id="calculator">
+    <div id="answer">
+        <p> {{ showString }}  </p>
+    </div>
+
+    <div id="buttons">
+      <button class="number" (click)="pressKey('7')">7</button>
+      <button class="number" (click)="pressKey('8')">8</button>
+      <button class="number" (click)="pressKey('9')">9</button>
+      <button class="clear" (click)="clear()">Clear</button>
+
+      <button class="number" (click)="pressKey('4')">4</button>
+      <button class="number" (click)="pressKey('5')">5</button>
+      <button class="number" (click)="pressKey('6')">6</button>
+      <button class="operator" (click)="pressKey('-')">-</button>
+
+      <button class="number" (click)="pressKey('1')">1</button>
+      <button class="number" (click)="pressKey('2')">2</button>
+      <button class="number" (click)="pressKey('3')">3</button>
+      <button class="operator" (click)="pressKey('+')">+</button>
+
+      
+      <button class="operator" (click)="pressKey('/')">%</button>
+      <button class="number" (click)="pressKey('0')">0</button>
+      <button class="operator" (click)="pressKey('x')">X</button>
+      <button class="calculate" (click)="calculateResult()">=</button>
+
+
+
+
+
+
+  </div>
+</div>
