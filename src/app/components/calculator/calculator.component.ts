@@ -13,11 +13,10 @@ export class CalculatorComponent implements OnInit {
   operand1: string = null;
   operand2: string = null;
   isOperandSet: boolean = false;
-  isOperatorSet: boolean;
+  isOperatorSet: boolean = false;
   operator: string = null;
   result: number = null;
   operators: Array<string> = ['-','+','x','/'];
-  operatorsBack: Array<string> = ['-','+','x','/'];
 
   constructor() { }
 
@@ -27,7 +26,7 @@ export class CalculatorComponent implements OnInit {
   
   pressKey(key: string) {
     this.showKey(key);
-    if (key == '+' || key == '-' || key == 'x' || key == '/') {
+    if (this.operators.includes(key)) {
       if (this.operand1 != null) {
         if (this.isOperatorSet) {
           this.calculateResult();
@@ -136,32 +135,4 @@ export class CalculatorComponent implements OnInit {
     this.operator = null;
     this.result = null;
   }
-
-  /*
-  backSpace() {
-    if (this.operatorsBack.includes(this.show[this.show.length -1])){
-      this.operator = null;
-      this.isOperatorSet = false;
-      return;
-    }
-    if(!this.isOperandSet) {
-      if (this.operand1 == null) {
-        return;
-      }
-      else {
-        this.operand1.slice(0,this.operand1.length-1);
-        if (this.operand1.length == 0) {
-          this.isOperandSet = false;
-        }
-        return;
-      }
-    }
-    else if(this.isOperatorSet) {
-      this.operand2.slice(0,this.operand2.length-1);
-      }
-    this.show = this.show.slice();
-    this.show.pop();
-    this.showString = this.show.join('');
-    
-  }*/
 }
